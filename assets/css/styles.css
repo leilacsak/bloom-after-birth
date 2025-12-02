@@ -138,3 +138,23 @@ h3 {
   height: 100%;
   object-fit: cover;
 }
+
+/* Affirmations carousel styles */
+#carousel-affirmations {
+  background-color: var(--highlight-color);
+  padding: 20px;
+  border-radius: 10px;
+}
+#carousel-affirmations .carousel-item {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+#carousel-affirmations .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Footer styles */
