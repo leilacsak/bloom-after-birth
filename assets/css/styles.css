@@ -5,8 +5,8 @@
   --secondary-font: "Nunito", sans-serif;
   --primary-color: #2e2e2e; /* graphite */
   --secondary-color: #f6b8a8; /* powder blush */
-  --highlight-color: #faf9f7; /* bright snow */
-  --highlight-color-light: #dde7e2; /* mint cream */
+  --highlight-color-light: #faf9f7; /* bright snow */
+  --highlight-color: #dde7e2; /* mint cream */
   --button-color: #4f6a5a; /* granite*/
 }
 /* Global styles */
@@ -57,3 +57,28 @@ h3 {
     height: 34px;
   }
 }
+
+/*Header styles */
+
+#header {
+  background-color: var(--secondary-color);
+  padding: 60px 20px;
+  text-align: center;
+  margin-top: 4rem; /* create space below the fixed navbar */
+}
+
+#header-image {
+  width: clamp(120px, 30vw, 320px);
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  /* blurred circular border */
+  box-shadow: 0 0 12px 6px rgba(79, 106, 90, 0.25);
+  filter: drop-shadow(0 0 8px rgba(79, 106, 90, 0.2));
+}
+
+/* Button styles */
