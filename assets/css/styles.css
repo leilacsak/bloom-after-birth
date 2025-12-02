@@ -101,3 +101,28 @@ h3 {
 .custom-button-filled:hover {
   background-color: var(--secondary-button-color);
 }
+
+/*Emotions section styles*/
+
+#emotions .emotion-card {
+  background-color: var(--highlight-color);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#emotions .card #bblues-card-header {
+  background-color: lightblue;
+  color: var(--primary-color);
+  font-weight: 700;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+#emotions .card #ppd-card-header {
+  background-color: lightgreen;
+  color: var(--primary-color);
+  font-weight: 700;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
