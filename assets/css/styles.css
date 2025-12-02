@@ -16,6 +16,17 @@ body {
   padding: 60px; /*Navbar fix*/
 }
 
+h1,
+h2,
+h3 {
+  font-family: var(--secondary-font);
+  color: var(--primary-color);
+}
+
+.section {
+  padding-top: 5rem; /*Prevents navbar overlap*/
+}
+
 /* Navbar styles */
 #navbar {
   background-color: var(--primary-color);
