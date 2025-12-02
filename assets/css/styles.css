@@ -126,3 +126,15 @@ h3 {
   font-weight: 700;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
+
+/*Welllbeing tips section styles*/
+#tips .img-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+#tips .img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
