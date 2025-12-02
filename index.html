@@ -31,8 +31,77 @@
     <!--Custom CSS-->
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
+
   <body>
-    <header></header>
+    <body class="d-flex flex-column min-vh-100">
+    <!--Navigation-->
+    <div>
+      <nav
+        id="navbar"
+        class="navbar navbar-expand-lg fixed-top"
+        data-bs-theme="dark"
+      >
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img src="assets/images/logo.png" alt="Bloom After Birth Logo" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Support
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#emotions">Emotions</a>
+                  </li>
+                  <li><a class="dropdown-item" href="#tips">Tips</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#affirmations"
+                      >Affirmations</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#resources">Resources</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#partners">Partners</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    
 
     <main></main>
 
@@ -50,5 +119,41 @@
       src="https://kit.fontawesome.com/f562a9a852.js"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const navLinks = document.querySelectorAll(
+    ".navbar-collapse .nav-link, .navbar-collapse .dropdown-item"
+  );
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      const href = e.currentTarget.getAttribute("href");
+
+      // Csak olyan linkeknél fusson, amik #id-re mutatnak
+      if (!href || !href.startsWith("#") || href === "#") return;
+
+      const section = document.querySelector(href);
+      if (!section) return;
+
+      e.preventDefault();
+
+      const navbarHeight = document.querySelector(".navbar").offsetHeight;
+
+      window.scroll({
+        top: section.offsetTop - navbarHeight,
+        behavior: "smooth",
+      });
+
+      // Navbar bezárása mobilon/tableten
+      const collapse = document.querySelector(".navbar-collapse");
+      if (collapse.classList.contains("show")) {
+        new bootstrap.Collapse(collapse).hide();
+      }
+    });
+  });
+});
+</script>
+
   </body>
 </html>

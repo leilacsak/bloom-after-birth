@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+/*CSS Variables*/
+:root {
+  --primary-font: "Inter", sans-serif;
+  --secondary-font: "Nunito", sans-serif;
+  --primary-color: #2e2e2e; /* graphite */
+  --secondary-color: #f6b8a8; /* powder blush */
+  --highlight-color: #faf9f7; /* bright snow */
+  --highlight-color-light: #dde7e2; /* mint cream */
+  --button-color: #4f6a5a; /* granite*/
+}
+/* Global styles */
+
+body {
+  font-family: var(--primary-font);
+  padding: 60px; /*Navbar fix*/
+}
+
+/* Navbar styles */
+#navbar {
+  background-color: var(--primary-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+/* Navbar logo sizing and alignment */
+#navbar .navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#navbar .navbar-brand img {
+  height: 40px; /* desired visual height */
+  width: auto; /* keep aspect ratio */
+  max-height: 48px; /* prevent oversized images */
+  display: block;
+}
+
+/* Smaller screens: slightly smaller logo */
+@media (max-width: 600px) {
+  #navbar .navbar-brand img {
+    height: 34px;
+  }
+}
