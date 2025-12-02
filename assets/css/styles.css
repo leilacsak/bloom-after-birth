@@ -8,6 +8,7 @@
   --highlight-color-light: #faf9f7; /* bright snow */
   --highlight-color: #dde7e2; /* mint cream */
   --button-color: #4f6a5a; /* granite*/
+  --secondary-button-color: #51b199; /* sea foam */
 }
 /* Global styles */
 
@@ -82,3 +83,21 @@ h3 {
 }
 
 /* Button styles */
+
+.custom-button-filled {
+  background-color: var(--button-color);
+  color: var(--highlight-color-light);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  width: -webkit-fit-content;
+  width: fit-content;
+}
+
+.custom-button-filled:hover {
+  background-color: var(--secondary-button-color);
+}
