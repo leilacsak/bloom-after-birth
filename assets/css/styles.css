@@ -97,6 +97,24 @@ h3 {
   width: fit-content;
 }
 
+.custom-button-outlined {
+  color: var(--button-color);
+  border: 2px solid var(--button-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  width: -webkit-fit-content;
+  width: fit-content;
+}
+
+.custom-button-outlined:hover {
+  background-color: var(--secondary-button-color);
+  color: var(--highlight-color-light);
+}
+
 .custom-button-filled:hover {
   background-color: var(--secondary-button-color);
 }
