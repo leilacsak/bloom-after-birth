@@ -9,7 +9,9 @@
   --highlight-color: #dde7e2; /* mint cream */
   --button-color: #4f6a5a; /* granite*/
   --secondary-button-color: #51b199; /* sea foam */
+  --section-gap: 2.5rem;
 }
+
 /* Global styles */
 
 body {
@@ -23,7 +25,15 @@ h3 {
   color: var(--button-color);
 }
 
-/* Navbar styles */
+/* Section spacing utilities */ /* Navbar styles */
+section,
+.page-section,
+.container-section,
+.group-section {
+  margin-top: var(--section-gap);
+  margin-bottom: var(--section-gap);
+}
+
 #navbar {
   background-color: var(--primary-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
