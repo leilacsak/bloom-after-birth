@@ -43,6 +43,17 @@ section,
   width: 100%;
   z-index: 1000;
 }
+
+#navbar a,
+#navbar .nav-link {
+  color: var(--highlight-color-light);
+}
+
+#navbar a:hover,
+#navbar .nav-link:hover {
+  color: var(--secondary-button-color);
+}
+
 /* Navbar logo sizing and alignment */
 #navbar .navbar-brand {
   display: flex;
