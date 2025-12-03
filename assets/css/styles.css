@@ -60,25 +60,17 @@ h3 {
 
 /*Header styles */
 
-#header {
-  background-color: var(--secondary-color);
+#hero {
   padding: 60px 20px;
   text-align: center;
-  margin-top: 6rem; /* create space below the fixed navbar */
-}
-
-#header-image {
-  width: clamp(120px, 30vw, 320px);
-  max-width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto;
-  /* blurred circular border */
-  box-shadow: 0 0 12px 6px rgba(79, 106, 90, 0.25);
-  filter: drop-shadow(0 0 8px rgba(79, 106, 90, 0.2));
+  margin-top: 4rem; /* create space below the fixed navbar */
+  background-image: url("../images/hero-image.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* add a subtle semi-transparent overlay to soften the hero background */
+  background-color: rgba(255, 255, 255, 0.45);
+  background-blend-mode: overlay;
 }
 
 /* Button styles */
