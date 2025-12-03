@@ -64,7 +64,7 @@ h3 {
   background-color: var(--secondary-color);
   padding: 60px 20px;
   text-align: center;
-  margin-top: 4rem; /* create space below the fixed navbar */
+  margin-top: 6rem; /* create space below the fixed navbar */
 }
 
 #header-image {
