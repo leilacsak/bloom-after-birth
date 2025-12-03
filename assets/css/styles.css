@@ -155,10 +155,12 @@ section,
 }
 
 /* Affirmations carousel styles */
+
 #carousel-affirmations {
   background-color: var(--secondary-color);
   padding: 20px;
   border-radius: 10px;
+  max-width: 600px;
 }
 #carousel-affirmations .carousel-item {
   aspect-ratio: 16 / 9;
