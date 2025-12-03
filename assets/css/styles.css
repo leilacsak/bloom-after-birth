@@ -194,3 +194,8 @@ footer {
   padding: 1rem;
   color: var(--highlight-color-light);
 }
+
+#disclaimer {
+  opacity: 0.5;
+  line-height: 1.4;
+}
