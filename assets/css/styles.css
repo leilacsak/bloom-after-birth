@@ -23,10 +23,6 @@ h3 {
   color: var(--button-color);
 }
 
-.section {
-  padding-top: 5rem; /*Prevents navbar overlap*/
-}
-
 /* Navbar styles */
 #navbar {
   background-color: var(--primary-color);
