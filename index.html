@@ -479,7 +479,7 @@
     ></script>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
   const navLinks = document.querySelectorAll(
     ".navbar-collapse .nav-link, .navbar-collapse .dropdown-item"
   );
@@ -488,7 +488,6 @@
     link.addEventListener("click", function (e) {
       const href = e.currentTarget.getAttribute("href");
 
-      // Csak olyan linkeknél fusson, amik #id-re mutatnak
       if (!href || !href.startsWith("#") || href === "#") return;
 
       const section = document.querySelector(href);
@@ -496,17 +495,29 @@
 
       e.preventDefault();
 
-      const navbarHeight = document.querySelector(".navbar").offsetHeight;
+      const collapseEl = document.querySelector(".navbar-collapse");
 
-      window.scroll({
-        top: section.offsetTop - navbarHeight,
-        behavior: "smooth",
-      });
+      function doScroll() {
+        const navbarHeight = document.querySelector(".navbar").offsetHeight;
+        const top = section.getBoundingClientRect().top + window.scrollY - navbarHeight;
+        window.scroll({
+          top: top,
+          behavior: "smooth",
+        });
+      }
 
-      // Navbar bezárása mobilon/tableten
-      const collapse = document.querySelector(".navbar-collapse");
-      if (collapse.classList.contains("show")) {
-        new bootstrap.Collapse(collapse).hide();
+      // If mobile menu is open, hide it first then scroll using the smaller navbar height
+      if (collapseEl && collapseEl.classList.contains("show")) {
+        const bsCollapse = new bootstrap.Collapse(collapseEl);
+        // wait for collapse to finish, then scroll
+        const onHidden = function () {
+          doScroll();
+          collapseEl.removeEventListener("hidden.bs.collapse", onHidden);
+        };
+        collapseEl.addEventListener("hidden.bs.collapse", onHidden);
+        bsCollapse.hide();
+      } else {
+        doScroll();
       }
     });
   });
@@ -521,18 +532,26 @@
         return;
       }
 
-      // Demo submit: hide modal, reset form, show simple alert
       const modalEl = document.getElementById('contactModal');
       const modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
       modal.hide();
       contactForm.reset();
       contactForm.classList.remove('was-validated');
-      // Small, accessible feedback — you can replace with a toast later
       alert('Thanks — your message has been sent (demo).');
     });
   }
 });
-    </script>
-
-  </body>
+  </script>
+<script>
+  (function () {
+    function updateNavHeight() {
+      const nav = document.getElementById('navbar');
+      if (!nav) return;
+      document.documentElement.style.setProperty('--navbar-height', nav.offsetHeight + 'px');
+    }
+    updateNavHeight();
+    window.addEventListener('resize', updateNavHeight);
+  })();
+</script>
+</body>
 </html>

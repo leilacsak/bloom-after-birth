@@ -10,6 +10,7 @@
   --button-color: #4f6a5a; /* granite*/
   --secondary-button-color: #51b199; /* sea foam */
   --section-gap: 6rem;
+  --navbar-height: 70px; /* fallback; updated dynamically by JS */
 }
 
 /* Global styles */
@@ -224,4 +225,24 @@ footer {
     margin-left: 1rem;
     margin-right: 1rem;
   }
+}
+
+/* Ensure fragment jumps land below the fixed navbar */
+:root {
+  --navbar-height: 70px; /* fallback; updated dynamically by JS */
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--navbar-height);
+}
+
+/* Make sections/headings avoid being covered by fixed navbar */
+section,
+.page-section,
+.group-section,
+h1,
+h2,
+h3 {
+  scroll-margin-top: calc(var(--navbar-height) + 0.5rem);
 }
