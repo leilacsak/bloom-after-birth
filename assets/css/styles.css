@@ -156,6 +156,11 @@ h3 {
   display: block;
 }
 
+/* Partners section styles */
+#partners .fa-solid {
+  margin-right: 0.5rem;
+}
+
 /* Footer styles */
 footer {
   width: 100%;
