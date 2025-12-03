@@ -171,6 +171,9 @@ h3 {
   margin-right: 0.5rem;
 }
 
+#resources .card {
+  background-color: var(--highlight-color);
+}
 /* Footer styles */
 footer {
   width: 100%;
