@@ -27,10 +27,7 @@ h3 {
 }
 
 /* Section spacing utilities */ /* Navbar styles */
-section,
-.page-section,
-.container-section,
-.group-section {
+section {
   margin-top: var(--section-gap);
   margin-bottom: var(--section-gap);
 }
@@ -69,13 +66,18 @@ section,
   display: block;
 }
 
-/* Smaller screens: slightly smaller logo */
-@media (max-width: 600px) {
-  #navbar .navbar-brand img {
-    height: 34px;
-  }
+/* Ensure fragment jumps land below the fixed navbar */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--navbar-height);
 }
 
+/* Make sections/headings avoid being covered by fixed navbar */
+section h1,
+h2,
+h3 {
+  scroll-margin-top: calc(var(--navbar-height) + 0.5rem);
+}
 /*Header styles */
 
 #hero {
@@ -141,14 +143,7 @@ section,
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#emotions .card #bblues-card-header {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-  font-weight: 700;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-}
-
-#emotions .card #ppd-card-header {
+#emotions .card .card-header {
   background-color: var(--secondary-color);
   color: var(--primary-color);
   font-weight: 700;
@@ -218,6 +213,12 @@ footer {
   line-height: 1.4;
 }
 
+/* Smaller screens: slightly smaller logo */
+@media (max-width: 600px) {
+  #navbar .navbar-brand img {
+    height: 34px;
+  }
+}
 /* Responsive adjustments for smaller screens */
 /* Affirmations carousel margin adjustment */
 @media (max-width: 768px) {
@@ -225,24 +226,4 @@ footer {
     margin-left: 1rem;
     margin-right: 1rem;
   }
-}
-
-/* Ensure fragment jumps land below the fixed navbar */
-:root {
-  --navbar-height: 70px; /* fallback; updated dynamically by JS */
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: var(--navbar-height);
-}
-
-/* Make sections/headings avoid being covered by fixed navbar */
-section,
-.page-section,
-.group-section,
-h1,
-h2,
-h3 {
-  scroll-margin-top: calc(var(--navbar-height) + 0.5rem);
 }
