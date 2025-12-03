@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
 /*CSS Variables*/
 :root {
   --primary-font: "Inter", sans-serif;
@@ -14,7 +15,6 @@
 }
 
 /* Global styles */
-
 body {
   font-family: var(--primary-font);
 }
@@ -26,12 +26,13 @@ h3 {
   color: var(--button-color);
 }
 
-/* Section spacing utilities */ /* Navbar styles */
+/* Section spacing utilities */
 section {
   margin-top: var(--section-gap);
   margin-bottom: var(--section-gap);
 }
 
+/* Navbar styles */
 #navbar {
   background-color: var(--primary-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -78,8 +79,8 @@ h2,
 h3 {
   scroll-margin-top: calc(var(--navbar-height) + 0.5rem);
 }
-/*Header styles */
 
+/*Header styles */
 #hero {
   background-image: url("../images/hero-image.png");
   background-repeat: no-repeat;
@@ -95,7 +96,6 @@ h3 {
 }
 
 /* Button styles */
-
 .custom-button-filled {
   background-color: var(--button-color);
   color: var(--highlight-color-light);
@@ -106,7 +106,6 @@ h3 {
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: inline-block;
-  width: -webkit-fit-content;
   width: fit-content;
 }
 
@@ -119,7 +118,6 @@ h3 {
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: inline-block;
-  width: -webkit-fit-content;
   width: fit-content;
 }
 
@@ -133,7 +131,6 @@ h3 {
 }
 
 /*Emotions section styles*/
-
 #emotions .emotion-card {
   background-color: var(--highlight-color);
   border-radius: 10px;
@@ -163,7 +160,6 @@ h3 {
 }
 
 /* Affirmations carousel styles */
-
 #carousel-affirmations {
   background-color: var(--secondary-color);
   padding: 20px;
@@ -193,6 +189,7 @@ h3 {
 #resources .card {
   background-color: var(--highlight-color);
 }
+
 /* Footer styles */
 footer {
   width: 100%;
