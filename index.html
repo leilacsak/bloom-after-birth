@@ -384,11 +384,11 @@
 
 <footer id="contact" class="text-center text-lg-start py-4 mt-auto bg-dark text-white w-100">
   <div class="container">
-    <div class="row justify-content-end mb-3">
+        <div class="row justify-content-end mb-3">
       <div class="col-12 col-md-6">
         <h3 class="display-6" style="color: var(--higlight-color-light);">Contact</h3>
         <p>If you’d like to reach out, we’re here to listen.</p>
-        <a href="#contact-form" class="btn custom-button-filled">Message Us</a>
+        <button type="button" class="btn custom-button-filled" data-bs-toggle="modal" data-bs-target="#contactModal">Message Us</button>
       </div>
     </div>
     <div class="row justify-content-center">
@@ -400,6 +400,41 @@
     </div>
   </div>
 </footer>
+
+<!-- Contact Modal -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="contactModalLabel">Send Us a Message</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form id="contact-form" class="needs-validation" novalidate>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="cf-name" class="form-label">Your name</label>
+            <input type="text" class="form-control" id="cf-name" placeholder="Full name" required>
+            <div class="invalid-feedback">Please enter your name.</div>
+          </div>
+          <div class="mb-3">
+            <label for="cf-email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="cf-email" placeholder="you@example.com" required>
+            <div class="invalid-feedback">Please enter a valid email.</div>
+          </div>
+          <div class="mb-3">
+            <label for="cf-message" class="form-label">Message</label>
+            <textarea class="form-control" id="cf-message" rows="4" required></textarea>
+            <div class="invalid-feedback">Please enter a message.</div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn custom-button-filled">Send message</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 
 
@@ -418,7 +453,7 @@
     ></script>
 
     <script>
-document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function () {
   const navLinks = document.querySelectorAll(
     ".navbar-collapse .nav-link, .navbar-collapse .dropdown-item"
   );
@@ -449,8 +484,29 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  // Contact form handling
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!contactForm.checkValidity()) {
+        contactForm.classList.add('was-validated');
+        return;
+      }
+
+      // Demo submit: hide modal, reset form, show simple alert
+      const modalEl = document.getElementById('contactModal');
+      const modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
+      modal.hide();
+      contactForm.reset();
+      contactForm.classList.remove('was-validated');
+      // Small, accessible feedback — you can replace with a toast later
+      alert('Thanks — your message has been sent (demo).');
+    });
+  }
 });
-</script>
+    </script>
 
   </body>
 </html>
