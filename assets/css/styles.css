@@ -61,15 +61,15 @@ h3 {
 /*Header styles */
 
 #hero {
-  padding: 60px 20px;
-  text-align: center;
-  margin-top: 4rem; /* create space below the fixed navbar */
   background-image: url("../images/hero-image.png");
-  background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  margin-top: 4rem; /* create space below the fixed navbar */
+
   /* add a subtle semi-transparent overlay to soften the hero background */
-  background-color: rgba(255, 255, 255, 0.45);
+  background-color: rgba(255, 255, 255, 0.65);
   background-blend-mode: overlay;
 }
 
