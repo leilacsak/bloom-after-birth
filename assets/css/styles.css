@@ -20,7 +20,7 @@ h1,
 h2,
 h3 {
   font-family: var(--secondary-font);
-  color: var(--primary-color);
+  color: var(--button-color);
 }
 
 .section {
