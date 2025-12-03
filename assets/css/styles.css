@@ -9,7 +9,7 @@
   --highlight-color: #dde7e2; /* mint cream */
   --button-color: #4f6a5a; /* granite*/
   --secondary-button-color: #51b199; /* sea foam */
-  --section-gap: 2.5rem;
+  --section-gap: 6rem;
 }
 
 /* Global styles */
@@ -84,6 +84,7 @@ section,
   background-size: cover;
   position: relative;
   margin-top: 4rem; /* create space below the fixed navbar */
+  margin-bottom: 0rem;
 
   /* add a subtle semi-transparent overlay to soften the hero background */
   background-color: rgba(255, 255, 255, 0.65);
