@@ -82,6 +82,7 @@ h3 {
 
 /*Header styles */
 #hero {
+  height: 50vh;
   background-image: url("../images/hero-image.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -210,6 +211,18 @@ footer {
   line-height: 1.4;
 }
 
+/* Custom margin utility for button gap above */
+@media (min-width: 320px) {
+  .btn-gap-above {
+    position: absolute;
+    left: 50%;
+    bottom: 1.5rem; /* distance from base of hero */
+    transform: translateX(-50%);
+    z-index: 10;
+    display: inline-block;
+    pointer-events: auto;
+  }
+}
 /* Smaller screens: slightly smaller logo */
 @media (max-width: 600px) {
   #navbar .navbar-brand img {
@@ -222,5 +235,30 @@ footer {
   #carousel-affirmations {
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+}
+
+/* Larger-screen hero spacing: only active at >= 1025px */
+@media (min-width: 1025px) {
+  #hero #hero-subtitle {
+    position: absolute;
+    left: 50%;
+    top: calc(50% - 8rem); /* place above the centered hero-message */
+    transform: translateX(-50%);
+    z-index: 25;
+    width: min(90%, 800px);
+    text-align: center;
+    padding: 0.5rem 1rem;
+  }
+
+  #hero #hero-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    width: min(90%, 800px);
+    text-align: center;
+    padding: 1rem;
   }
 }
