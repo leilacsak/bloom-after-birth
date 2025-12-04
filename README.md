@@ -260,17 +260,30 @@ As a new mother, I want access to calming audio or guided relaxation tracks, so 
   <img width="639" height="103" alt="image" src="https://github.com/user-attachments/assets/84f1a76a-4e8d-4db7-9149-efe19a5a7117" />
 
 - Lighthouse Test
+
+  ![lighthouse-test](https://github.com/user-attachments/assets/0625e389-b2b0-488d-b58c-eddb0fcc41b6)
   
 - All images include descriptive alt text
 - Colour contrast checked for accessibility
 
   **Bugs:**
+
+  - Carousel alignment issues: Affirmations carousel wasn’t visually centered, especially on tablet view. Fix: Wrapped carousel in mx-auto and used col-md-10 col-lg-8 with justify-content-center.
+  - Carousel on mobile view touching edges / styling issues. Fix: Wrapped carousel in container (mx-auto px-3 px-md-0) and used BootStrap utilities and later adjusted CSS.
+  - Navbar scroll overlap: Fixed navbar overlapped content when anchor links were clicked. Fix: Added custom JS that calculates navbar.offsetHeight and applies smooth scroll offset. Also used scroll-padding-top       in CSS for consistent spacing.
+  - Footer social icons: Icons unevenly spaced and modal button styling clashed with footer layout. Fix: Used list-inline-item me-3 for consistent spacing, unified button styles with Bootstrap utilities, and          improved disclaimer readability with larger font size and better contrast.
+  - Logo not showing on deployed site (wrong file path / case-sensitivity). Fix: Corrected the file path.
+  - “Message Us” button in footer had no working modal / contact form broken. Fix: Added modal HTML + necessary JavaScript to make “Message Us” button open a contact form modal.
+  - Cards in “Emotions” section had uneven height and mis-alignment.Fix: Added .h-100 and .d-flex justify-content-center wrappers on card columns.
+  - HTML / CSS validation: Cleaned up HTML markup & CSS, removed redundant or invalid code, corrected missing element end tags.
+    
   
 
 
 ## Credits
 
-- AI tools such as Copilot (Vscode) were used strategically throughout the development process for generating code and content for the website.
+- AI tool such as Copilot were used strategically throughout the development in VScode.
+- I have used ChatGPT to give me ideas for website content and user stories.
 - Images were created with Canva https://www.canva.com/templates
 - Images were resized by Tinify  https://tinypng.com/
 - Icons are from https://fontawesome.com/
@@ -301,6 +314,7 @@ As a new mother, I want access to calming audio or guided relaxation tracks, so 
 
 
  
+
 
 
 
